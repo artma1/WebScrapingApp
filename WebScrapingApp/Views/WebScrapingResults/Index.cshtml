@@ -8,17 +8,18 @@
   <title>Index</title>
 </head>
 <body>
+ 
   <p>
-    <a asp-action="Create" class="btn btn-success">Scrap</a>
+    <a asp-action="Create" class="btn btn-success">Scrap from URL</a>
   </p>
 
   <form asp-action="Index" method="post">
     <div class="form-group">
-      <label for="linesToCreate" class="control-label">Lines to Create</label>
-      <input type="number" id="linesToCreate" name="linesToCreate" class="form-control" />
+      <label for="linesToCreate" class="control-label">Lines to be Created(double plus 1)</label>
+      <input type="number" id="linesToCreate" name="linesToCreate" class="form-control" placeholder="Insert number here" />
     </div>
     <div class="form-group">
-      <input type="submit" value="Change edit" class="btn btn-primary" />
+      <input type="submit" value="Change Edit View file" class="btn btn-primary" />
     </div>
     </form>
 

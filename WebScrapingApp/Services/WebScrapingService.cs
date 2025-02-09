@@ -20,7 +20,7 @@ namespace WebScrappingApp.Services
       }
       catch (Exception ex)
       {
-        Console.WriteLine($"Erro ao processar a URL {url}: {ex.Message}");
+        Console.WriteLine($"Error in processing URL {url}: {ex.Message}");
         return $"Error: {ex.Message}";
       }
     }
