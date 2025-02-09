@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebScrappingApp.Context;
 using WebScrappingApp.Models;
 using WebScrappingApp.Services;
-using Microsoft.AspNetCore.Hosting;
-using System.IO;
 
 namespace WebScrapingApp.Controllers
 {
@@ -27,7 +20,6 @@ namespace WebScrapingApp.Controllers
       _context = context;
       _scraper = scraper;
     }
-
 
     public async Task<IActionResult> Index()
     {
@@ -61,7 +53,6 @@ namespace WebScrapingApp.Controllers
       return View("Edit");
     }
 
-
     public async Task<IActionResult> Details(int? id)
     {
       if (id == null)
@@ -93,7 +84,6 @@ namespace WebScrapingApp.Controllers
       webScrapingResult.Text = scrapedText;
       webScrapingResult.Date = DateTime.Now;
 
-
       if (ModelState.IsValid)
       {
         try
@@ -112,7 +102,6 @@ namespace WebScrapingApp.Controllers
 
     public string GenerateHtml(string findMe, int lines)
     {
-      // StringBuilder para construir o HTML de forma eficiente
       var htmlBuilder = new StringBuilder();
 
       for (int i = 0; i < lines; i++)
@@ -166,7 +155,6 @@ namespace WebScrapingApp.Controllers
 
       System.IO.File.WriteAllLines(viewFilePath, lines);
     }
-
 
     public async Task<IActionResult> Edit(WebScrapingResult webScrapingResult)
     {
